@@ -1,0 +1,45 @@
+<html lang='en'>
+<head>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main >
+    <h1 class="main-title"> Modal Project</h1>
+   <span> <button>Show modal</button>
+    <button>Open modal</button>
+    <button>Display modal</button>
+</span>
+</main>  
+<div id="background-cover"></div>
+<div class="modal active">
+    <span class="close">x</span>
+    <div class="modal-head">
+        <h2><img src="https://tse2.mm.bing.net/th?id=OIP.A8vg3iqNM3At1SZUDrC69AHaEo&pid=Api&P=0&w=267&h=167"/></h2>
+    </div>
+    <div class="modal-content">
+        <p>Twilight is a series of four vampire-themed fantasy romance novels by American author Stephenie Meyer . Released annually from 2005 through 2008, the four books chart the later teen years of Isabella "Bella" Swan, a girl who moves to Forks, Washington, and falls in love with a 104-year-old vampire named Edward Cullen . </p>
+    </div>
+</div>
+<script >
+    const buttonEl = document.querySelector('button');
+const mainEl = document.querySelector('main');
+const modalEl = document.querySelector('.modal');
+const closeEl = document.querySelector('.close');
+const backgroundCoverEl = document.querySelector('#background-cover');
+/////////////////////////////////////////////////
+function closeModal(){
+    mainEl.classList.remove('blur');
+    backgroundCoverEl.style.display="none";
+    modalEl.classList.remove('open');
+}
+function showModal(){
+mainEl.classList.add('blur');
+backgroundCoverEl.style.display="block";
+modalEl.classList.add('open');
+}
+buttonEl.addEventListener('click', showModal);
+closeEl.addEventListener("click", closeModal);
+backgroundCoverEl.addEventListener("click",closeModal);
+</script>
+</body>
+</html>
